@@ -1,0 +1,104 @@
+1 :- Task-1
+
+function Probability(data, Count) {
+    const objCount = {};
+
+    for (const res in data) {
+      objCount[res] = 0;
+    }
+    for (let i = 0; i < Count; i++) {
+      const rand = Math.random() * 100; 
+      let ans = 0;
+  
+      for (const res in data) {
+        ans += data[res];
+  
+        if (rand <= ans) {
+          objCount[res]++;
+          break;
+        }
+      }
+    }
+  
+    return objCount;
+  }
+  
+  const data = {
+    Head: 35,
+    Tail: 65,
+};
+  
+  const Count = 1000;
+  const result = Probability(data, Count);
+  console.log(result);
+
+
+
+
+
+
+
+
+
+2 :- Task-2
+
+const readline = require('readline');
+
+const queue = [];
+
+async function main() {
+    const rate = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout,
+    });
+
+    for await (const line of rate) {
+        if (line.trim().toLowerCase() === 'end') {
+            break;
+        }
+
+        queue.push(line.trim());
+    }
+    rate.close();
+    withRateLimit();
+}
+
+main();
+
+async function withRateLimit() {
+    try {
+        
+    } catch (error) {  
+    }   
+}
+
+
+
+
+3 :- Task-3 Debugging
+
+def compute(n):
+    if n < 10:
+        out = n ** 2
+    elif n < 20:
+        out = 1
+        for i in range(1, n-9):
+            out *= i
+    else:
+        lim = n - 20
+        out = lim * lim
+        out -= lim
+        out //= 2
+    print(out)
+
+compute(n)
+
+
+
+
+
+
+
+
+
+
